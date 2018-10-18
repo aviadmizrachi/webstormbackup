@@ -1,0 +1,10 @@
+<application>
+  <component name="ParameterNameHintsSettings">
+    <blacklists>
+      <blacklist language="TypeScript">
+        <added pattern="Promise.then(onfulfilled,onrejected)" />
+      </blacklist>
+    </blacklists>
+    <option id="js.show.names.for.all.args" value="true" />
+  </component>
+</application>

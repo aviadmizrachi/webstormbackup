@@ -1,0 +1,9 @@
+<application>
+  <component name="DockerRegistry">
+    <DockerRegistry email="michaelmi@checkpoint.com">
+      <option name="address" value="gitlab.locsec.net:4567/cloudinfra-dev" />
+      <option name="name" value="Docker Registry" />
+      <option name="username" value="michaelmi" />
+    </DockerRegistry>
+  </component>
+</application>

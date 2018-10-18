@@ -1,0 +1,53 @@
+<templateSet group="JavaScript">
+  <template name="iter" value="for(let $VAR$ in $OBJECT$) {&#10;  if($OBJECT$.hasOwnProperty($VAR$))&#10;    $CB$.call($CTX$, $OBJECT$[$VAR$], $VAR$, $OBJECT$)&#10;}" description="Iterate (for each..in) - JavaScript 1.6+" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="jsSuggestVariableName()" defaultValue="&quot;key&quot;" alwaysStopAt="true" />
+    <variable name="OBJECT" expression="jsArrayVariable()" defaultValue="&quot;obj&quot;" alwaysStopAt="true" />
+    <variable name="CB" expression="" defaultValue="&quot;cb&quot;" alwaysStopAt="true" />
+    <variable name="CTX" expression="" defaultValue="&quot;ctx&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="itar" value="for (let $INDEX$ = 0; $INDEX$ &lt; $ARRAY$.length; $INDEX$++) {&#10;  let $VAR$ = $ARRAY$[$INDEX$];&#10;  $END$&#10;}" description="Iterate elements of array" toReformat="true" toShortenFQNames="true">
+    <variable name="INDEX" expression="jsSuggestIndexName()" defaultValue="&quot;i&quot;" alwaysStopAt="true" />
+    <variable name="ARRAY" expression="jsArrayVariable()" defaultValue="&quot;array&quot;" alwaysStopAt="true" />
+    <variable name="VAR" expression="jsSuggestVariableName()" defaultValue="&quot;o&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="lg" value="let log = console.debug.bind(console)" description="logger" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="wi" value="let $INDEX$ = -1;&#10;while(++i &lt; $ARRAY$.length) {&#10;  if($CB$($ARRAY$[$INDEX$], $INDEX$, $ARRAY$))&#10;    break;&#10;}" description="while" toReformat="false" toShortenFQNames="true">
+    <variable name="INDEX" expression="jsSuggestIndexName()" defaultValue="&quot;i&quot;" alwaysStopAt="true" />
+    <variable name="ARRAY" expression="jsArrayVariable()" defaultValue="&quot;arr&quot;" alwaysStopAt="true" />
+    <variable name="CB" expression="jsMethodName()" defaultValue="&quot;cb&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rq" value="let $NAME$ = require('$FILE_PATH$')" description="require" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="FILE_PATH" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="JS" value="JSON.stringify($VAR$, 0, 2)" description="json stringify" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="&quot;obj&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JS_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="args" value="let $VAR$ = [].slice.call(arguments)" description="slice arguments" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="&quot;args&quot;" alwaysStopAt="true" />
+  </template>
+  <template name="dial" value="let $VAR$ = $CTX$.$METHOD$.call.bind($CTX$.$METHOD$)" description="dial" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CTX" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="METHOD" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_EXPRESSION" value="true" />
+    </context>
+  </template>
+</templateSet>
